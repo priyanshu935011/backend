@@ -1,7 +1,7 @@
 const express = require("express");
 const connected = require("./db");
 var cors = require("cors");
-
+const PORT = process.env.PORT || 8000
 connected();
 app = express();
 app.use(cors());
@@ -18,6 +18,6 @@ app.get("/", (req, res) => {
   console.log("Hello");
 });
 
-app.listen(8000, () => {
-  console.log("Listening at port 8000");
+app.listen(PORT, () => {
+  console.log(`Listening at port ${PORT}`);
 });
