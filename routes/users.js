@@ -27,7 +27,7 @@ router.post("/create", async (req, res) => {
         if (!checkEmail) {
           salt = 10;
           securePass = await bcrypt.hash(password, salt);
-          const user = User.create({
+          const user = await User.create({
             first_name: first_name,
             last_name: last_name,
             email: email,
